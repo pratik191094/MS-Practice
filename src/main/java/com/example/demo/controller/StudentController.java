@@ -30,7 +30,7 @@ public class StudentController {
 	public ResponseEntity<StudentDTO> saveStudent(@RequestBody StudentDTO dto) {
 
 		StudentDTO studentDTO = service.saveStudent(dto);
-		return new ResponseEntity<StudentDTO>(studentDTO, HttpStatus.CREATED);
+		return new ResponseEntity<>(studentDTO, HttpStatus.CREATED);
 
 	}
 
@@ -39,7 +39,7 @@ public class StudentController {
 	public ResponseEntity<StudentDTO> getStudentById(@PathVariable("id") Integer id) {
 
 		StudentDTO studentDTO = service.getStudentById(id);
-		return new ResponseEntity<StudentDTO>(studentDTO, HttpStatus.OK);
+		return new ResponseEntity<>(studentDTO, HttpStatus.OK);
 
 	}
 
@@ -47,14 +47,14 @@ public class StudentController {
 	@GetMapping(value = "/getAll")
 	public ResponseEntity<List<StudentDTO>> getAllStudentData() {
 
-		return new ResponseEntity<List<StudentDTO>>(service.getAllStudentData(), HttpStatus.OK);
+		return new ResponseEntity<>(service.getAllStudentData(), HttpStatus.OK);
 	}
 
 	// update student details
 	@PutMapping(value = "/{id}")
 	public ResponseEntity<StudentDTO> updateStudentById(@RequestBody StudentDTO dto, @PathVariable("id") Integer id) {
 
-		return new ResponseEntity<StudentDTO>(service.updateStudentById(dto, id), HttpStatus.OK);
+		return new ResponseEntity<>(service.updateStudentById(dto, id), HttpStatus.OK);
 	}
 	
 	
@@ -63,7 +63,7 @@ public class StudentController {
 		public ResponseEntity<?> deleteStudentById(@PathVariable("id") Integer id) {
 
 			service.deleteStudentById(id);
-			return new ResponseEntity(Map.of("message","user deleted successully"), HttpStatus.OK);
+			return new ResponseEntity<>(Map.of("message","user deleted successully"), HttpStatus.OK);
 
 		}
 }
