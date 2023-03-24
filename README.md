@@ -1,3 +1,3 @@
 # MS-Practice
 
-basic springboot CRUD example with mysql connectivity.
+Basic springboot CRUD example with mysql connectivity.
