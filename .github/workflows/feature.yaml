@@ -1,4 +1,4 @@
-name: feature branch Maven build and test
+name: Feature branch maven build
 
 on:
   push:
